@@ -10,7 +10,7 @@ use app\models\estado;
 use app\models\municipio;
 use Faker;
 
-class SeedController extends Controller
+class SeedSepomexController extends Controller
 {
     public function actionIndex()
     {
