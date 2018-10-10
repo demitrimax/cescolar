@@ -30,7 +30,7 @@ class Carreras extends \yii\db\ActiveRecord
         return [
             [['idcarreras'], 'required'],
             [['idcarreras'], 'integer'],
-            [['nombre'], 'string', 'max' => 30],
+            [['nombre'], 'string', 'max' => 55],
             [['idcarreras'], 'unique'],
         ];
     }

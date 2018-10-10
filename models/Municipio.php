@@ -31,7 +31,7 @@ class Municipio extends \yii\db\ActiveRecord
         return [
             [['idmuni', 'nomMunicipio', 'estado_idedo'], 'required'],
             [['idmuni', 'estado_idedo'], 'integer'],
-            [['nomMunicipio'], 'string', 'max' => 20],
+            [['nomMunicipio'], 'string', 'max' => 55],
             [['idmuni', 'estado_idedo'], 'unique', 'targetAttribute' => ['idmuni', 'estado_idedo']],
             [['estado_idedo'], 'exist', 'skipOnError' => true, 'targetClass' => Estado::className(), 'targetAttribute' => ['estado_idedo' => 'idedo']],
         ];

@@ -31,7 +31,7 @@ class Estado extends \yii\db\ActiveRecord
         return [
             [['idedo', 'nombredo'], 'required'],
             [['idedo'], 'integer'],
-            [['nombredo'], 'string', 'max' => 18],
+            [['nombredo'], 'string', 'max' => 35],
             [['idedo'], 'unique'],
         ];
     }

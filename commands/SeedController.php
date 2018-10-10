@@ -8,6 +8,8 @@ use app\models\alumnos;
 //use app\models\materias;
 //use app\models\status;
 use app\models\carreras;
+use app\models\estado;
+use app\models\municipio;
 //use app\models\departamentos;
 use Faker;
 
@@ -23,18 +25,23 @@ class SeedController extends Controller
 
 		$faker = Faker\Factory::create();
 
-		
+
 		$carreras_array = [
 			['id' => 1, 'idcarrera' => 'INGACUALIC', 'nombre' => 'Ingeniería en Acuacultura' ],
 			['id' => 2, 'idcarrera' => 'INGAGROLIC', 'nombre' => 'Ingeniería en Agronomía' ],
 			['id' => 3, 'idcarrera' => 'INGALIMLIC', 'nombre' => 'Ingeniería en Alimentos'],
-			['id' => 4, 'idcarrera' => 'LICMEVEZOO', 'nombre' => 'Licenciatura en Informática Administrativa'],
-			['id' => 5, 'idcarrera' => 'LICMEVEZOO', 'nombre' => 'Licenciatura en Medicina Veterinaria y Zootecnia'],
-			['id' => 6, 'idcarrera' => 'LICMEVEZOO', 'nombre' => 'Licenciatura en Sistemas Computacionales'],
-			['id' => 7, 'idcarrera' => 'LICMEVEZOO', 'nombre' => 'Licenciatura en Telemática '],
-			['id' => 8, 'idcarrera' => 'LICMEVEZOO', 'nombre' => 'Licenciatura en Tecnologías de la Información'],
-			['id' => 9, 'idcarrera' => 'LICMEVEZOO', 'nombre' => 'Ingeniería en Informática Administrativa'],
-			['id' => 10, 'idcarrera' => 'LICMEVEZOO', 'nombre' => 'Ingeniería en Sistemas Computacionales'],
+			['id' => 4, 'idcarrera' => 'LICMEVEZOO', 'nombre' => 'Licenciatura en Medicina Veterinaria y Zootecnia'],
+			['id' => 5, 'idcarrera' => 'LICINFADM', 'nombre' => 'Licenciatura en Informática Administrativa'],
+			['id' => 6, 'idcarrera' => 'LICSISCOM', 'nombre' => 'Licenciatura en Sistemas Computacionales'],
+			['id' => 7, 'idcarrera' => 'LITELEMAT', 'nombre' => 'Licenciatura en Telemática '],
+			['id' => 8, 'idcarrera' => 'LICTI', 'nombre' => 'Licenciatura en Tecnologías de la Información'],
+			['id' => 9, 'idcarrera' => 'INGINFADM', 'nombre' => 'Ingeniería en Informática Administrativa'],
+			['id' => 10, 'idcarrera' => 'INGSISTCOMP', 'nombre' => 'Ingeniería en Sistemas Computacionales'],
+			['id' => 11, 'idcarrera' => 'INGSISTCOMP', 'nombre' => 'Ingeniería Civil '],
+			['id' => 12, 'idcarrera' => 'INGSISTCOMP', 'nombre' => 'Ingeniería Eléctrica y Electrónica'], 
+			['id' => 13, 'idcarrera' => 'INGSISTCOMP', 'nombre' => 'Ingeniería Mecánica Eléctrica'], 
+			['id' => 14, 'idcarrera' => 'INGSISTCOMP', 'nombre' => 'Ingeniería Química'],
+			['id' => 15, 'idcarrera' => 'INGSISTCOMP', 'nombre' => 'Licenciatura en Arquitectura'],
 			
 		];
 
@@ -51,7 +58,7 @@ class SeedController extends Controller
 					$array_carreras[] = $carrera['id'];
 		}
 		//print_r($array_carreras);
-		for ($i=0; $i < 500; $i++) {
+		for ($i=0; $i < 50; $i++) {
 			//echo $faker->ean13."; ";
   			$alumnos 					= new alumnos();
 		    $alumnos->matricula 		= $faker->ean8;	
