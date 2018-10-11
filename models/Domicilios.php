@@ -53,12 +53,12 @@ class Domicilios extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'iddom' => 'Iddom',
-            'calle' => 'Calle',
-            'no' => 'No',
-            'colonia' => 'Colonia',
-            'codpostal' => 'Codpostal',
-            'estado_idestado' => 'Estado Idestado',
+            'iddom'             => 'Id',
+            'calle'             => 'Calle',
+            'no'                => 'No.',
+            'colonia'           => 'Colonia',
+            'codpostal'         => 'Código Postal',
+            'estado_idestado'   => 'Estado',
         ];
     }
 

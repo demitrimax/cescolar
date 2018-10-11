@@ -54,10 +54,10 @@ class Grupos extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idclave' => 'Idclave',
-            'materias_clave' => 'Materias Clave',
-            'cicloescolar_periodo' => 'Cicloescolar Periodo',
-            'maestros_idcie' => 'Maestros Idcie',
+            'idclave'               => 'Id',
+            'materias_clave'        => 'Clave Materia',
+            'cicloescolar_periodo'  => 'Ciclo Escolar',
+            'maestros_idcie'        => 'Maestro',
         ];
     }
 

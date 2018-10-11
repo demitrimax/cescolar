@@ -39,11 +39,11 @@ class ContactForm extends Model
     public function attributeLabels()
     {
         return [
-            'verifyCode'    => 'Codigo de Verificación',
+            'verifyCode'    => 'Código de Verificación',
             'name'          => 'Nombre',
             'subject'       => 'Asunto',
             'body'          => 'Contenido',
-            'email'         => 'Correo Eléctronico', 
+            'email'         => 'Correo Electrónico', 
         ];
     }
 

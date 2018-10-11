@@ -44,9 +44,9 @@ class Departamentos extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'iddepa' => 'Iddepa',
-            'nombre' => 'Nombre',
-            'maestros_idcie' => 'Maestros Idcie',
+            'iddepa'            => 'Id',
+            'nombre'            => 'Nombre',
+            'maestros_idcie'    => 'Id Maestro',
         ];
     }
 

@@ -22,7 +22,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'curp')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'genero')->dropDownList([ 'F' => 'F', 'M' => 'M', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'genero')->dropDownList([ 'F' => 'Femenino', 'M' => 'Masculino', ], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'telfijo')->textInput(['maxlength' => true]) ?>
 

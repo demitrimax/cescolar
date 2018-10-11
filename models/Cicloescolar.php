@@ -42,9 +42,9 @@ class Cicloescolar extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'periodo' => 'Periodo',
-            'fechain' => 'Fechain',
-            'fechafin' => 'Fechafin',
+            'periodo'   => 'Periodo',
+            'fechain'   => 'Fecha Inicio',
+            'fechafin'  => 'Fecha Fin',
         ];
     }
 

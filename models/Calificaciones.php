@@ -43,9 +43,9 @@ class Calificaciones extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'parcial' => 'Parcial',
-            'promedio' => 'Promedio',
-            'alumnos_matricula' => 'Alumnos Matricula',
+            'parcial'           => 'Parcial',
+            'promedio'          => 'Promedio',
+            'alumnos_matricula' => 'Matricula Alumno',
         ];
     }
 
