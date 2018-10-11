@@ -4,9 +4,9 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'basic',
+    'id' => 'cescolar',
     'basePath' => dirname(__DIR__),
-    'name' => 'Mi aplicacion',
+    'name' => 'Sistema de Control Escolar',
     'language' => 'es-ES',
     'timezone' => 'America/Mexico_City',
     'bootstrap' => ['log'],

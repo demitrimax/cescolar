@@ -65,20 +65,20 @@ class Alumnos extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'matricula' => 'Matricula',
-            'nombre' => 'Nombre',
-            'apellidopat' => 'Apellidopat',
-            'apellidomat' => 'Apellidomat',
-            'curp' => 'Curp',
-            'genero' => 'Genero',
-            'telfijo' => 'Telfijo',
-            'cell' => 'Cell',
-            'email' => 'Email',
-            'fechains' => 'Fechains',
-            'nss' => 'Nss',
-            'contacto' => 'Contacto',
-            'status_idstatus' => 'Status Idstatus',
-            'carreras_idcarreras' => 'Carreras Idcarreras',
+            'matricula'                 => 'Matrícula',
+            'nombre'                    => 'Nombre',
+            'apellidopat'               => 'Apellido Paterno',
+            'apellidomat'               => 'Apellido Materno',
+            'curp'                      => 'CURP',
+            'genero'                    => 'Genero',
+            'telfijo'                   => 'Teléfono Fijo',
+            'cell'                      => 'Teléfono Celular',
+            'email'                     => 'Email',
+            'fechains'                  => 'Fecha de Inscripción',
+            'nss'                       => 'NSS',
+            'contacto'                  => 'Contacto',
+            'status_idstatus'           => 'Estatus',
+            'carreras_idcarreras'       => 'Carrera',
         ];
     }
 

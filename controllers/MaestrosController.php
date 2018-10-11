@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * MaestroController implements the CRUD actions for Maestros model.
  */
-class MaestroController extends Controller
+class MaestrosController extends Controller
 {
     /**
      * {@inheritdoc}

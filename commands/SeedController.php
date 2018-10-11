@@ -5,11 +5,9 @@ namespace app\commands;
 
 use yii\console\Controller;
 use app\models\alumnos;
-//use app\models\materias;
-//use app\models\status;
 use app\models\carreras;
-use app\models\estado;
-use app\models\municipio;
+use app\models\maestros;
+
 //use app\models\departamentos;
 use Faker;
 
@@ -58,7 +56,7 @@ class SeedController extends Controller
 					$array_carreras[] = $carrera['id'];
 		}
 		//print_r($array_carreras);
-		for ($i=0; $i < 50; $i++) {
+		for ($i=0; $i < 10000; $i++) {
 			//echo $faker->ean13."; ";
   			$alumnos 					= new alumnos();
 		    $alumnos->matricula 		= $faker->ean8;	
@@ -80,6 +78,35 @@ class SeedController extends Controller
 			echo "Creando Registro...".$i.chr(10);
 		}
 		
+		//alta de maestros
+
+		for ($i=0; $i < 500; $i++)
+		{
+			$maestros = new maestros();
+			//primero decidir el sexo del profesor
+			$sexo = $faker->randomElement($array = array ('F','M'));
+			//seleccionar por el sexo el nombre
+			if ($sexo == 'F') { 
+				$NombreProfe = $faker->firstNameFemale; 
+			}
+			if ($sexo == 'M') { 
+				$NombreProfe = $faker->firstNameMale; 
+			} 
+
+			$maestros->idcie		= $faker->bothify('M#?#??'); //varchar(6)	
+			$maestros->nombre		= $NombreProfe; //varchar(35)	
+			$maestros->apellidopat	= $faker->lastName; //varchar(35)	
+			$maestros->apellidomat	= $faker->lastName; //varchar(35)	
+			$maestros->curp			= $faker->creditCardNumber;//varchar(16)	
+			$maestros->genero		= $sexo;	//enum('F','M')	
+			$maestros->telfijo		= $faker->numerify('993#######');	//varchar(10) NULL []	
+			$maestros->cell			= $faker->numerify('993#######');	//varchar(10) NULL []	
+			$maestros->email		= $faker->safeEmail;	//varchar(35)	
+			$maestros->status		= $faker->randomElement($array = array ('ACTIVO','COMISION','BAJA'));	//enum('ACTIVO','COMISION','BAJA') NULL
+			//print_r($maestros);	
+			$maestros->save();
+			echo "Creando Registro...".$i.chr(10);
+		}
 
 		
     }
