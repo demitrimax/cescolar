@@ -55,16 +55,16 @@ class Maestros extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idcie' => 'Idcie',
-            'nombre' => 'Nombre',
-            'apellidopat' => 'Apellidopat',
-            'apellidomat' => 'Apellidomat',
-            'curp' => 'Curp',
-            'genero' => 'Genero',
-            'telfijo' => 'Telfijo',
-            'cell' => 'Cell',
-            'email' => 'Email',
-            'status' => 'Status',
+            'idcie'         => 'Id',
+            'nombre'        => 'Nombre',
+            'apellidopat'   => 'Apellido Paterno',
+            'apellidomat'   => 'Apellido Materno',
+            'curp'          => 'CURP',
+            'genero'        => 'Genero',
+            'telfijo'       => 'Teléfono Fijo',
+            'cell'          => 'Teléfono Celular',
+            'email'         => 'Email',
+            'status'        => 'Status',
         ];
     }
 

@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = 'Fomrulario de Contacto';
+$this->title = 'Formulario de Contacto';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
@@ -21,12 +21,12 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
         <p>
-            Note that if you turn on the Yii debugger, you should be able
-            to view the mail message on the mail panel of the debugger.
+            Nota, si habilito el Yii debuger, será capaz de 
+            ver el mensaje en el panel debugger de su aplicación.
             <?php if (Yii::$app->mailer->useFileTransport): ?>
-                Because the application is in development mode, the email is not sent but saved as
-                a file under <code><?= Yii::getAlias(Yii::$app->mailer->fileTransportPath) ?></code>.
-                Please configure the <code>useFileTransport</code> property of the <code>mail</code>
+                Debido a que la aplicación esta en modo de desarrollo, el correo no es enviado pero es 
+                guardado como <code><?= Yii::getAlias(Yii::$app->mailer->fileTransportPath) ?></code>.
+                Porfavor configure la propiedad <code>useFileTransport</code> de el <code>mail</code>
                 application component to be false to enable email sending.
             <?php endif; ?>
         </p>
@@ -55,7 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]) ?>
 
                     <div class="form-group">
-                        <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                        <?= Html::submitButton('Enviar', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
                     </div>
 
                 <?php ActiveForm::end(); ?>

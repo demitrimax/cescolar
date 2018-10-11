@@ -32,13 +32,18 @@ class ContactForm extends Model
         ];
     }
 
+
     /**
      * @return array customized attribute labels
      */
     public function attributeLabels()
     {
         return [
-            'verifyCode' => 'Verification Code',
+            'verifyCode'    => 'Codigo de Verificación',
+            'name'          => 'Nombre',
+            'subject'       => 'Asunto',
+            'body'          => 'Contenido',
+            'email'         => 'Correo Eléctronico', 
         ];
     }
 
