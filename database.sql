@@ -145,6 +145,7 @@ CREATE TABLE IF NOT EXISTS `control`.`domicilios` (
   `colonia` VARCHAR(25) NULL DEFAULT '',
   `codpostal` VARCHAR(5) NULL DEFAULT '',
   `estado_idestado` INT NOT NULL,
+  'municipio' INT NOT NULL,
   PRIMARY KEY (`iddom`, `estado_idestado`),
   INDEX `fk_domicilios_estado1_idx` (`estado_idestado` ASC),
   CONSTRAINT `fk_domicilios_estado1`

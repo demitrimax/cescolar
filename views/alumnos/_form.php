@@ -2,7 +2,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\carreras;
 
+$carreras = ArrayHelper::map(carreras::find()->all(), 'idcarreras', 'nombre');
 /* @var $this yii\web\View */
 /* @var $model app\models\Alumnos */
 /* @var $form yii\widgets\ActiveForm */
@@ -22,7 +25,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'curp')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'genero')->dropDownList([ 'F' => 'F', 'M' => 'M', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'genero')->dropDownList([ 'F' => 'Femenino', 'M' => 'Masculino', ], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'telfijo')->textInput(['maxlength' => true]) ?>
 
@@ -36,9 +39,16 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'contacto')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status_idstatus')->textInput() ?>
-
-    <?= $form->field($model, 'carreras_idcarreras')->textInput() ?>
+    <?= $form->field($model, 'status_idstatus')->dropDownList([ '1' => 'Activo', '0' => 'Inactivo', ], ['prompt' => '']) ?>
+    <!--
+    <?= $form->field($model, 'carreras_idcarreras')->dropDownList($carreras, ['prompt' => 'Seleccione una carrera']) ?>
+    -->
+    <?= $form->field($model, 'carreras_idcarreras')->textInput(['list' => 'carreras']) ?>
+    <datalist id='carreras'>
+        <?php foreach ($carreras as $key => $value): ?>
+            <option id="<?= $key ?>" value="<?= $value ?>" > 
+            <?php endforeach ?>
+    </datalist>
 
     <div class="form-group">
         <?= Html::submitButton('Guardar Alumno', ['class' => 'btn btn-success']) ?>
@@ -47,3 +57,11 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
+<script type="text/javascript">
+    $(function(){
+    $('#carreras_idcarreas').change(function(){
+        console.log($('#carreras_idcarreas').val();
+        console.log($('#carreras_idcarreas option[value=' + $('#input').val() + ']').attr('id'));
+    });
+});
+</script>

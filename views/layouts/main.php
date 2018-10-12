@@ -48,6 +48,7 @@ AppAsset::register($this);
                     ['label' => 'Alumnos', 'url' => ['/alumnos']],
                     ['label' => 'Carreras', 'url' => ['/carreras']],
                     ['label' => 'Materias', 'url' => ['/materias']],
+                    ['label' => 'Carreras', 'url' => ['/carreras']],
                     ['label' => 'Calificaciones', 'url' => ['/calificaciones']],
                     ['label' => 'Grupos', 'url' => ['/grupos']],
                 ],

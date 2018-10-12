@@ -70,7 +70,7 @@ class Alumnos extends \yii\db\ActiveRecord
             'apellidopat'               => 'Apellido Paterno',
             'apellidomat'               => 'Apellido Materno',
             'curp'                      => 'CURP',
-            'genero'                    => 'Genero',
+            'genero'                    => 'Género',
             'telfijo'                   => 'Teléfono Fijo',
             'cell'                      => 'Teléfono Celular',
             'email'                     => 'Email',

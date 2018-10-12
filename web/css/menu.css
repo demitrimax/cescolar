@@ -1,0 +1,50 @@
+.botones{
+	align: center;
+	width:   200px;
+	height:  200px;
+	padding: 100px 10px 10px 10px;
+	border:    1px solid #ddd;
+	cursor: pointer;
+	display: inline-block;
+	background-size: 50% 50% ;
+	background-repeat: no-repeat;
+	background-position: center top;
+	border-radius: 10%;
+
+}
+
+.btnver1:nth-child(1){ background-color: #A02227; background-image: url(../img/alumnos.jpg); background-size: cover; }
+.btnver2:nth-child(1){ background-color: #348B38; background-image: url(../img/calificaciones.jpg); background-size: cover; }
+.btnver3:nth-child(1){ background-color: #4CA0F5; background-image: url(../img/maestros.jpg); background-size: cover;
+					   background-position: 10% 5%; }
+.btnver4:nth-child(1){ background-color: #58A9AC; background-image: url(../img/Asignaturas.jpg);
+					   background-size: cover; }
+
+.btnver5:nth-child(1){ background-color: #58A9AC; background-image: url(../img/carreras2.jpg);
+					   background-size: cover; }
+
+.btnver6:nth-child(1){ background-color: #58A9AC; background-image: url(../img/grupos.jpg);
+					   background-size: cover; }
+
+
+.btnver15:nth-child(1){ background-color: #D2762B;
+				       background-image: url(../img/carreras2.jpg), url(../img/carreras.jpg);
+					   background-size: : 50% 50%, 50% 50%;
+					   background-position: 10% 10%, 80% 10%;  }
+
+.botones h1 {
+	text-align: center;
+	color: white;
+	font-family: Tahoma;
+	font-size: 30px;
+	text-shadow: 5px 5px 5px black;
+}
+.botones p{
+	text-align: justify;
+	text-justify: inter-word;
+}
+.botones:hover{
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
