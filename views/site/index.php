@@ -19,15 +19,9 @@ $this->title = 'My Yii Application';
 
         <div class="row">
             <div class="col-lg-4">
-                    
-                    <?= Html::a('<div class="botones btnver1"><h1>Alumnos</h1><p></div></div>', ['/alumnos']) ?> 
-                
-            
+                    <?= Html::a('<div class="botones btnver1"><h1>Alumnos</h1></div>', ['/alumnos']) ?> 
             <div class="col-lg-4">
-                <div class="botones btnver2">
-                    <a href="#"></a>
-                    <h1>Calificaciones</h1><p><b>Texto del boton</b> Con la imagen ocupando toda el área</p>
-                </div>
+                    <?= Html::a('<div class="botones btnver2"><h1>Calificaciones</h1></div>', ['/calificaciones']) ?>
             </div>
             <div class="col-lg-4">
                 <div class="botones btnver3">

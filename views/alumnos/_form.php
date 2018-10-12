@@ -46,7 +46,7 @@ $carreras = ArrayHelper::map(carreras::find()->all(), 'idcarreras', 'nombre');
     <?= $form->field($model, 'carreras_idcarreras')->textInput(['list' => 'carreras']) ?>
     <datalist id='carreras'>
         <?php foreach ($carreras as $key => $value): ?>
-            <option id="<?= $key ?>" value="<?= $value ?>" > 
+            <option data-value="<?= $key ?>"> <?= $value ?></option> 
             <?php endforeach ?>
     </datalist>
 
