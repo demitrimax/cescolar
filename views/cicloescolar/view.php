@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Cicloescolar */
 
 $this->title = $model->periodo;
-$this->params['breadcrumbs'][] = ['label' => 'Cicloescolars', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Ciclo Escolar', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cicloescolar-view">
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->periodo], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->periodo], [
+        <?= Html::a('Actualizar', ['update', 'id' => $model->periodo], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Eliminar', ['delete', 'id' => $model->periodo], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Esta usted seguro de eliminar este ciclo?',
                 'method' => 'post',
             ],
         ]) ?>

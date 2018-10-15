@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\CicloescolarSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Cicloescolars';
+$this->title = 'Ciclo Escolar';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cicloescolar-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Cicloescolar', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Alta de Ciclo Escolar', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

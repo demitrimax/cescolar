@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Cicloescolar */
 
-$this->title = 'Update Cicloescolar: ' . $model->periodo;
-$this->params['breadcrumbs'][] = ['label' => 'Cicloescolars', 'url' => ['index']];
+$this->title = 'Actualizar Ciclo Escolar: ' . $model->periodo;
+$this->params['breadcrumbs'][] = ['label' => 'Ciclo Escolar', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->periodo, 'url' => ['view', 'id' => $model->periodo]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="cicloescolar-update">
 

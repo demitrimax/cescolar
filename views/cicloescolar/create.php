@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Cicloescolar */
 
-$this->title = 'Create Cicloescolar';
+$this->title = 'Alta de Ciclo Escolar';
 $this->params['breadcrumbs'][] = ['label' => 'Cicloescolars', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

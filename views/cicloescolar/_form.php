@@ -14,12 +14,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'periodo')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'fechain')->textInput() ?>
+    <?= $form->field($model, 'fechain')->textInput() ?> 
 
     <?= $form->field($model, 'fechafin')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -50,6 +50,8 @@ AppAsset::register($this);
                     ['label' => 'Calificaciones', 'url' => ['/calificaciones']],
                     ['label' => 'Grupos', 'url' => ['/grupos']],
                     ['label' => 'Departamentos', 'url' => ['/departamentos']],
+                    ['label' => 'Horarios', 'url' => ['/horarios']],
+                    ['label' => 'Ciclo Escolar', 'url' => ['/cicloescolar']],
                 ],
             ],
             ['label' => 'Acerca de', 'url' => ['/site/about']],
