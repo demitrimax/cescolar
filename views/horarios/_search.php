@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\HorariosController */
+/* @var $model app\models\HorariosSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 

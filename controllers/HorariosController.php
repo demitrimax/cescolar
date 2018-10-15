@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Horarios;
-use app\models\HorariosController;
+use app\models\HorariosSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,7 +35,7 @@ class HorariosController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new HorariosController();
+        $searchModel = new HorariosSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [

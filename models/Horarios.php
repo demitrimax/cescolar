@@ -44,9 +44,9 @@ class Horarios extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idhorario' => 'Idhorario',
-            'horario' => 'Horario',
-            'dia' => 'Dia',
+            'idhorario'     => 'Id',
+            'horario'       => 'Horario',
+            'dia'           => 'Dia',
         ];
     }
 

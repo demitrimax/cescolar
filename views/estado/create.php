@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\estado */
 
-$this->title = 'Create Estado';
+$this->title = 'Alta de Estado';
 $this->params['breadcrumbs'][] = ['label' => 'Estados', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
