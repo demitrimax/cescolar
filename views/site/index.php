@@ -20,28 +20,20 @@ $this->title = 'My Yii Application';
         <div class="row">
             <div class="col-lg-4">
                     <?= Html::a('<div class="botones btnver1"><h1>Alumnos</h1></div>', ['/alumnos']) ?> 
+                </div>
             <div class="col-lg-4">
                     <?= Html::a('<div class="botones btnver2"><h1>Calificaciones</h1></div>', ['/calificaciones']) ?>
             </div>
             <div class="col-lg-4">
-                <div class="botones btnver3">
-                    <a href="#"></a>
-                    <h1>Maestros</h1><p><b>Texto del boton</b> Con la imagen ocupando toda el área</p>
-                </div>
+                    <?= Html::a('<div class="botones btnver3"><h1>Maestros</h1></div>', ['/maestros']) ?>
             </div>
 
             <div class="col-lg-4">
-                <div class="botones btnver4">
-                    <a href="#"></a>
-                    <h1>Asignaturas</h1><p><b>Texto del boton</b> Con la imagen ocupando toda el área</p>
-                </div>
+                    <?= Html::a('<div class="botones btnver4"><h1>Asignaturas</h1></div>', ['/materias']) ?>
             </div>
 
             <div class="col-lg-4">
-                <div class="botones btnver5">
-                    <a href="#"></a>
-                    <h1>Carreras</h1><p><b>Texto del boton</b> Con la imagen ocupando toda el área</p>
-                </div>
+                <?= Html::a('<div class="botones btnver5"><h1>Carreras</h1></div>', ['/carreras']) ?>
             </div>
 
             <div class="col-lg-4">

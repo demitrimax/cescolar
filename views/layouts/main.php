@@ -39,10 +39,8 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Principal', 'url' => ['/site/index']],
-            ['label' => 'Acerca de', 'url' => ['/site/about']],
-            ['label' => 'Contacto', 'url' => ['/site/contact']],
-            [
-                'label' => 'Componentes',
+                        [
+                'label' => 'Menú',
                 'items' => [
                     ['label' => 'Maestros', 'url' => ['/maestros']],
                     ['label' => 'Alumnos', 'url' => ['/alumnos']],
@@ -51,8 +49,12 @@ AppAsset::register($this);
                     ['label' => 'Carreras', 'url' => ['/carreras']],
                     ['label' => 'Calificaciones', 'url' => ['/calificaciones']],
                     ['label' => 'Grupos', 'url' => ['/grupos']],
+                    ['label' => 'Departamentos', 'url' => ['/departamentos']],
                 ],
-            ], 
+            ],
+            ['label' => 'Acerca de', 'url' => ['/site/about']],
+            ['label' => 'Contacto', 'url' => ['/site/contact']],
+ 
             Yii::$app->user->isGuest ? (
                 ['label' => 'Iniciar Sesión', 'url' => ['/site/login']]
             ) : (
