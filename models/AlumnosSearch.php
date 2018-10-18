@@ -12,13 +12,15 @@ use app\models\Alumnos;
  */
 class AlumnosSearch extends Alumnos
 {
+
+    public $nombrecompleto; //este es campo personalizado que se agrega a la busqueda
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['matricula', 'nombre', 'apellidopat', 'apellidomat', 'curp', 'genero', 'telfijo', 'cell', 'email', 'fechains', 'nss', 'contacto'], 'safe'],
+            [['matricula', 'nombre', 'apellidopat', 'apellidomat', 'curp', 'genero', 'telfijo', 'cell', 'email', 'fechains', 'nss', 'contacto', 'nombrecompleto'], 'safe'],
             [['status_idstatus', 'carreras_idcarreras'], 'integer'],
         ];
     }
@@ -48,6 +50,21 @@ class AlumnosSearch extends Alumnos
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+        //todo esto se agrega para que se ordene
+        $dataProvider->setSort([
+                'attributes' => [
+                    'matricula',
+                    'nombre',
+                    'apellidopat',
+                    'apellidomat',
+                    'curp',
+                    'nombrecompleto' => [
+                        'asc' => ['apellidomat' => SORT_ASC, 'apellidomat' => SORT_ASC, 'nombre' => SORT_ASC],
+                        'desc' => ['apellidopat' => SORT_DESC, 'apellidomat' => SORT_DESC, 'nombre' => SORT_DESC],
+                        'default'=>SORT_ASC,
+                    ],
+                ]
+        ]);
 
         $this->load($params);
 
@@ -75,6 +92,8 @@ class AlumnosSearch extends Alumnos
             ->andFilterWhere(['like', 'email', $this->email])
             ->andFilterWhere(['like', 'nss', $this->nss])
             ->andFilterWhere(['like', 'contacto', $this->contacto]);
+   //esto se tuvo que agregar adicional para la busqueda por nombre completo
+    $query->andFilterWhere(['like', "CONCAT(apellidopat,' ',apellidomat,' ',nombre)", $this->nombrecompleto]);
 
         return $dataProvider;
     }

@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="alumnos-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php  // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Alta de Alumno', ['create'], ['class' => 'btn btn-success']) ?>
@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'apellidopat',
             'apellidomat',
             'curp',
+            'nombrecompleto',
             //'genero',
             //'telfijo',
             //'cell',

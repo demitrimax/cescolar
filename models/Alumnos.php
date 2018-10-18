@@ -79,8 +79,10 @@ class Alumnos extends \yii\db\ActiveRecord
             'contacto'                  => 'Contacto',
             'status_idstatus'           => 'Estatus',
             'carreras_idcarreras'       => 'Carrera',
+            'nombrecompleto'            => 'Nombre Completo',
         ];
     }
+   
 
     /**
      * @return \yii\db\ActiveQuery
@@ -128,5 +130,14 @@ class Alumnos extends \yii\db\ActiveRecord
     public function getCalificaciones()
     {
         return $this->hasOne(Calificaciones::className(), ['alumnos_matricula' => 'matricula']);
+    }
+
+
+     // campo calculado
+    public function getNombrecompleto()
+    {
+        //aqui se concatena el nombre y los apellidos para tener el nombre completo.
+        $dato = $this->nombre.' '.$this->apellidopat.' '.$this->apellidomat;
+        return $dato; 
     }
 }
