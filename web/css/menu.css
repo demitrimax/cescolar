@@ -26,9 +26,17 @@
 .btnver6:nth-child(1){ background-color: #58A9AC; background-image: url(../img/grupos.jpg);
 					   background-size: cover; }
 
+.btnver7:nth-child(1){ background-color: #58A9AC; background-image: url(../img/oficina_departamento.jpg);
+					   background-size: cover; }
+
+.btnver8:nth-child(1){ background-color: #58A9AC; background-image: url(../img/6491550_orig.jpg);
+					   background-size: cover; }
+
+.btnver9:nth-child(1){ background-color: #58A9AC; background-image: url(../img/calendario.jpg);
+					   background-size: cover; }
 
 .btnver15:nth-child(1){ background-color: #D2762B;
-				       background-image: url(../img/carreras2.jpg), url(../img/carreras.jpg);
+				       background-image: url(../img/carreras2.jpg), url(../meeting-room.png);
 					   background-size: : 50% 50%, 50% 50%;
 					   background-position: 10% 10%, 80% 10%;  }
 

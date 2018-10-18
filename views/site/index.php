@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 use yii\helpers\Html;
 
-$this->title = 'My Yii Application';
+$this->title = 'Aplicación de Control Escolar';
 ?>
 <div class="site-index">
 
@@ -20,7 +20,7 @@ $this->title = 'My Yii Application';
         <div class="row">
             <div class="col-lg-4">
                     <?= Html::a('<div class="botones btnver1"><h1>Alumnos</h1></div>', ['/alumnos']) ?> 
-                </div>
+            </div>
             <div class="col-lg-4">
                     <?= Html::a('<div class="botones btnver2"><h1>Calificaciones</h1></div>', ['/calificaciones']) ?>
             </div>
@@ -29,7 +29,7 @@ $this->title = 'My Yii Application';
             </div>
 
             <div class="col-lg-4">
-                    <?= Html::a('<div class="botones btnver4"><h1>Asignaturas</h1></div>', ['/materias']) ?>
+                    <?= Html::a('<div class="botones btnver4"><h1>Materias</h1></div>', ['/materias']) ?>
             </div>
 
             <div class="col-lg-4">
@@ -37,33 +37,19 @@ $this->title = 'My Yii Application';
             </div>
 
             <div class="col-lg-4">
-                <div class="botones btnver6">
-                    <a href="#"></a>
-                    <h1>Grupos</h1><p><b>Texto del boton</b> Con la imagen ocupando toda el área</p>
-                </div>
+                <?= Html::a('<div class="botones btnver6"><h1>Grupos</h1></div>', ['/grupos']) ?>
             </div>
 
             <div class="col-lg-4">
-                <h2>Maestros</h2>
-
-                <p>Lista detallada de la lista de maestros en la base de datos.</p>
-
-                <p><?= Html::a('Base Maestros &raquo;', ['/maestros'], ['class' => 'btn btn-default']) ?></p>
+                <?= Html::a('<div class="botones btnver7"><h1>Deptos</h1></div>', ['/departamentos']) ?>
             </div>
 
             <div class="col-lg-4">
-                <h2>Alumnos</h2>
-
-                <p>Lista de la base de datos de los alumnos registrados.</p>
-                <p><?= Html::a('Alumnos &raquo;', ['/alumnos'], ['class' => 'btn btn-default']) ?></p>
+                <?= Html::a('<div class="botones btnver8"><h1>Horarios</h1></div>', ['/horarios']) ?>
             </div>
             <div class="col-lg-4">
-                <h2>Carreras</h2>
-
-                <p>Listado de las carreras que se tienen actualmente.</p>
-                <p><?= Html::a('Carreras &raquo;', ['/carreras'], ['class' => 'btn btn-default']) ?></p>
+                <?= Html::a('<div class="botones btnver9"><h1>Ciclo Escolar</h1></div>', ['/cicloescolar']) ?>
             </div>
-        </div>
 
     </div>
 </div>

@@ -42,12 +42,12 @@ AppAsset::register($this);
                         [
                 'label' => 'Menú',
                 'items' => [
-                    ['label' => 'Maestros', 'url' => ['/maestros']],
+                    
                     ['label' => 'Alumnos', 'url' => ['/alumnos']],
-                    ['label' => 'Carreras', 'url' => ['/carreras']],
+                    ['label' => 'Calificaciones', 'url' => ['/calificaciones']],
+                    ['label' => 'Maestros', 'url' => ['/maestros']],
                     ['label' => 'Materias', 'url' => ['/materias']],
                     ['label' => 'Carreras', 'url' => ['/carreras']],
-                    ['label' => 'Calificaciones', 'url' => ['/calificaciones']],
                     ['label' => 'Grupos', 'url' => ['/grupos']],
                     ['label' => 'Departamentos', 'url' => ['/departamentos']],
                     ['label' => 'Horarios', 'url' => ['/horarios']],
