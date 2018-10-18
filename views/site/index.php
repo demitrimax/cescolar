@@ -4,6 +4,8 @@
 use yii\helpers\Html;
 
 $this->title = 'Aplicación de Control Escolar';
+
+$nivel =\app\models\User::findIdentity(Yii::$app->user->id)->nivel;
 ?>
 <div class="site-index">
 
@@ -27,7 +29,7 @@ $this->title = 'Aplicación de Control Escolar';
             <div class="col-lg-4">
                     <?= Html::a('<div class="botones btnver3"><h1>Maestros</h1></div>', ['/maestros']) ?>
             </div>
-
+            <?php if($nivel=='otro'||$nivel=='admin') { ?>
             <div class="col-lg-4">
                     <?= Html::a('<div class="botones btnver4"><h1>Materias</h1></div>', ['/materias']) ?>
             </div>
@@ -39,7 +41,8 @@ $this->title = 'Aplicación de Control Escolar';
             <div class="col-lg-4">
                 <?= Html::a('<div class="botones btnver6"><h1>Grupos</h1></div>', ['/grupos']) ?>
             </div>
-
+            <?php } ?>
+            <?php if($nivel=='jefe'||$nivel=='admin') { ?>
             <div class="col-lg-4">
                 <?= Html::a('<div class="botones btnver7"><h1>Deptos</h1></div>', ['/departamentos']) ?>
             </div>
@@ -50,6 +53,7 @@ $this->title = 'Aplicación de Control Escolar';
             <div class="col-lg-4">
                 <?= Html::a('<div class="botones btnver9"><h1>Ciclo Escolar</h1></div>', ['/cicloescolar']) ?>
             </div>
+        <?php } ?>
 
     </div>
 </div>

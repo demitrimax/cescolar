@@ -26,7 +26,15 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
             'password' => 'demo',
             'authKey' => 'test101key',
             'accessToken' => '101-token',
-            'nivel' => 'user',
+            'nivel' => 'jefe',
+        ],
+        '102' => [
+            'id' => '102',
+            'username' => 'otro',
+            'password' => 'otro',
+            'authKey' => 'test101key',
+            'accessToken' => '101-token',
+            'nivel' => 'otro',
         ],
     ];
 
