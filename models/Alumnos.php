@@ -140,4 +140,10 @@ class Alumnos extends \yii\db\ActiveRecord
         $dato = $this->nombre.' '.$this->apellidopat.' '.$this->apellidomat;
         return $dato; 
     }
+    //esto lo estoy agregando para que siempre pueda tener acceso a la carrera
+    public function getCarrera()
+    {
+        return \app\models\Carreras::findOne($this->carreras_idcarreras);;
+        //return $carrera->nombre;
+    }
 }
