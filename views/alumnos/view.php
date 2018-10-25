@@ -71,4 +71,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
+     <?= Html::a('Agregar Dirección', ['domicilios/create'], ['class' => 'btn btn-success']) ?>
+
 </div>

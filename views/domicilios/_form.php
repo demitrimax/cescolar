@@ -2,10 +2,16 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\estado;
+use app\models\municipio;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Domicilios */
 /* @var $form yii\widgets\ActiveForm */
+
+$estados = ArrayHelper::map(estado::find()->all(), 'idedo', 'nombredo');
+
 ?>
 
 <div class="domicilios-form">
@@ -22,10 +28,18 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'codpostal')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'estado_idestado')->textInput() ?>
+    <?= $form->field($model, 'estado_idestado')->dropDownList($estados, ['prompt' => 'Seleccione un estado', 'onChange'=>'
+        $.post("/municipio/municipios?estado="+$(this).val(),
+        function (data) {
+            $("select#idmunicipio").html( data );
+        }
+        );
+        ']) ?>
+
+    <?= $form->field($model, 'idmunicipio')->dropDownList(['prompt' => 'Seleccione un municipio']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

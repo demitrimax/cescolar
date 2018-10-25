@@ -36,8 +36,8 @@ class Domicilios extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['iddom', 'estado_idestado'], 'required'],
-            [['iddom', 'estado_idestado'], 'integer'],
+            [['iddom', 'estado_idestado', 'idmunicipio'], 'required'],
+            [['iddom', 'estado_idestado', 'idmunicipio'], 'integer'],
             [['calle'], 'string', 'max' => 50],
             [['no'], 'string', 'max' => 10],
             [['colonia'], 'string', 'max' => 25],
@@ -59,6 +59,7 @@ class Domicilios extends \yii\db\ActiveRecord
             'colonia'           => 'Colonia',
             'codpostal'         => 'Código Postal',
             'estado_idestado'   => 'Estado',
+            'idmunicipio'       => 'Municipio'
         ];
     }
 

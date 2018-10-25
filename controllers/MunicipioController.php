@@ -128,4 +128,16 @@ class MunicipioController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    public function actionMunicipios($estado) 
+    {
+        $municipios = \app\models\municipio::find()
+        ->where(['estado_idedo'=>$estado])
+        ->orderBy('nomMunicipio')
+        ->all();
+        echo '<option value="">Seleccione uno</option>';
+        foreach($municipios as $municipio) {
+            echo "<option value='{$municipio->idmuni}'>{$municipio->nomMunicipio}</option>\n";
+        }
+    }
 }
