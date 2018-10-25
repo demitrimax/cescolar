@@ -40,16 +40,16 @@ $carreras = ArrayHelper::map(carreras::find()->all(), 'idcarreras', 'nombre');
     <?= $form->field($model, 'contacto')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'status_idstatus')->dropDownList([ '1' => 'Activo', '0' => 'Inactivo', ], ['prompt' => '']) ?>
-    <!--
+    
     <?= $form->field($model, 'carreras_idcarreras')->dropDownList($carreras, ['prompt' => 'Seleccione una carrera']) ?>
-    -->
+    <!--
     <?= $form->field($model, 'carreras_idcarreras')->textInput(['list' => 'carreras']) ?>
     <datalist id='carreras'>
         <?php foreach ($carreras as $key => $value): ?>
             <option data-value="<?= $key ?>"> <?= $value ?></option> 
             <?php endforeach ?>
     </datalist>
-
+    -->
     <div class="form-group">
         <?= Html::submitButton('Guardar Alumno', ['class' => 'btn btn-success']) ?>
     </div>

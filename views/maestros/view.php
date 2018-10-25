@@ -33,7 +33,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'apellidopat',
             'apellidomat',
             'curp',
-            'genero',
+            //'genero',
+            [ 'attribute' => 'genero',
+                'value' => function ($model) {
+                    return $model->genero == 'M'? 'Masculino' : 'Femenino';
+                },
+
+            ],
             'telfijo',
             'cell',
             'email:email',
