@@ -8,6 +8,8 @@ use app\models\AlumnosSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+
 
 /**
  * AlumnosController implements the CRUD actions for Alumnos model.
@@ -17,6 +19,8 @@ class AlumnosController extends Controller
     /**
      * {@inheritdoc}
      */
+    public $freeAccessActions = ['index'];
+
     public function behaviors()
     {
         return [
@@ -25,7 +29,11 @@ class AlumnosController extends Controller
                 'actions' => [
                     'delete' => ['POST'],
                 ],
+
             ],
+            'ghost-access'=> [
+            'class' => 'webvimark\modules\UserManagement\components\GhostAccessControl',
+        ],
         ];
     }
 
