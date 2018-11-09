@@ -146,4 +146,8 @@ class Alumnos extends \yii\db\ActiveRecord
         return \app\models\Carreras::findOne($this->carreras_idcarreras);;
         //return $carrera->nombre;
     }
+    public function getNomgenero()
+    {
+        return $this->genero == 'M'? 'Masculino' : 'Femenino';
+    }
 }

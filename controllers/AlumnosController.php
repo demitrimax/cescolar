@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use kartik\mpdf\Pdf; //libreria para generar el PDF
 
 
 /**
@@ -136,4 +137,80 @@ class AlumnosController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+    public function actionReporte() {
+            $models = Alumnos::find()->limit(1000)->all();
+
+            //var_dump($models);
+            // get your HTML raw content without any layouts or scripts
+            $content = $this->renderPartial('index2', ['titulo'=>'Título del Reporte','models' => $models]);
+            // setup kartik\mpdf\Pdf component
+            $pdf = new Pdf([
+                // set to use core fonts only
+                'mode' => Pdf::MODE_CORE,
+                // A4 paper format
+                'format' => Pdf::FORMAT_A4,
+                // portrait orientation
+                'orientation' => Pdf::ORIENT_PORTRAIT,
+                // stream to browser inline
+                'destination' => Pdf::DEST_BROWSER,
+                // your html content input
+                'content' => $content,
+                // format content from your own css file if needed or use the
+                // enhanced bootstrap css built by Krajee for mPDF formatting
+                'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
+                // any css to be embedded if required
+                'cssInline' => '.kv-heading-1{font-size:18px}',
+                // set mPDF properties on the fly
+                //'options' => [ 'title' => 'Título del Reporte'],
+                // call mPDF methods on the fly
+                'methods' => [
+                    'SetHeader'=>['Encabezado del Reporte||Alumnos'],
+                    'SetFooter'=>['{DATE j-m-Y}|Alumnos|Página {PAGENO}'],
+                        ]
+                ]);
+            // return the pdf output as per the destination setting
+            return $pdf->render();
+            }
+
+            public function actionReportealumno($matricula,$carreras_idcarreras)
+            {
+                //$models = Alumnos::find()->limit(1000)->all();
+                // return $this->render('view', [
+            //'model' => $this->findModel($matricula, $carreras_idcarreras),
+                // ]);
+            //var_dump($models);
+            // get your HTML raw content without any layouts or scripts
+            $content = $this->renderPartial('viewalumno', ['titulo'=>'Título del Reporte','model' => $this->findModel($matricula, $carreras_idcarreras)]);
+            // setup kartik\mpdf\Pdf component
+            $pdf = new Pdf([
+                // set to use core fonts only
+                'mode' => Pdf::MODE_CORE,
+                // A4 paper format
+                'format' => Pdf::FORMAT_A4,
+                // portrait orientation
+                'orientation' => Pdf::ORIENT_PORTRAIT,
+                // stream to browser inline
+                'destination' => Pdf::DEST_BROWSER,
+                // your html content input
+                'content' => $content,
+                // format content from your own css file if needed or use the
+                // enhanced bootstrap css built by Krajee for mPDF formatting
+                'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
+                // any css to be embedded if required
+                'cssInline' => '.kv-heading-1{font-size:18px}',
+                // set mPDF properties on the fly
+                //'options' => [ 'title' => 'Título del Reporte'],
+                // call mPDF methods on the fly
+                'methods' => [
+                    'SetHeader'=>['Encabezado del Reporte||Alumnos'],
+                    'SetFooter'=>['{DATE j-m-Y}|Alumnos|Página {PAGENO}'],
+                        ]
+                ]);
+            // return the pdf output as per the destination setting
+            return $pdf->render();
+
+                // return $this->render('view', ['model' => $this->findModel($matricula, $carreras_idcarreras),    ]);
+            }
+
+
 }

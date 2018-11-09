@@ -1,64 +1,42 @@
 <?php
+
+/* @var $this \yii\web\View */
+/* @var $content string */
+
+use app\widgets\Alert;
 use yii\helpers\Html;
-use yii\widgets\Menu;
-use yii\widgets\Breadcrumbs;
-use yii\debug\Toolbar;
-use app\assets\AppAsset;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\widgets\Breadcrumbs;
+use app\assets\AppAsset;
 use webvimark\modules\UserManagement\components\GhostMenu;
 use webvimark\modules\UserManagement\UserManagementModule;
 use webvimark\modules\UserManagement\models\User;
 
-// You can use the registerAssetBundle function if you'd like
-//$this->registerAssetBundle('app');
+//echo "<pre>";
+//$elrol = User::hasRole($roles);
+//var_dump($elrol);
+//die;
+
 AppAsset::register($this);
 ?>
-<?php $this->beginPage(); ?>
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html>
+<html lang="<?= Yii::$app->language ?>">
 <head>
-<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-<title><?php echo Html::encode($this->title); ?></title>
-<meta property='og:site_name' content='<?php echo Html::encode($this->title); ?>' />
-<meta property='og:title' content='<?php echo Html::encode($this->title); ?>' />
-<meta property='og:description' content='<?php echo Html::encode($this->title); ?>' />
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-<link rel='stylesheet' type='text/css' href='<?php echo $this->theme->baseUrl; ?>/files/main_style.css' title='wsite-theme-css' />
-<?php $this->head(); ?>
+    <meta charset="<?= Yii::$app->charset ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?= Html::csrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
+    <?php $this->head() ?>
 </head>
-<body class='wsite-theme-light tall-header-page wsite-page-index weeblypage-index'>
-<?php $this->beginBody(); ?>
-<div class="header-wrapper">
-  <div class="wrapper">
-    <div class="title">
-      <div id="header-right-wrapper-l">
-        <div id="header-right-wrapper-r">
-          <table id="header-right">
-            <tr>
-              <td>
-                <div class="search"></div>
-                <table>
-                  <tr>
-                    <td class="phone-number"></td>
-                    <td class="social"></td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <span class="titletext">
-        <span class='wsite-logo'><a href='/'><span id="wsite-title"><?php echo Html::encode(\Yii::$app->name); ?></span></a></span>
-      </span>
-      <div class="clear"></div>
-    </div>
-    <div id="navigation">
-      <?php 
-        NavBar::begin([
+<body>
+<?php $this->beginBody() ?>
+
+<div class="wrap">
+    <?php
+    NavBar::begin([
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
@@ -120,24 +98,26 @@ AppAsset::register($this);
         ],
     ]);
     NavBar::end();
-       ?></div>
-  </div>
-</div>
-<div class="outer-wrapper">
-  <div class="wrapper">
-    <div id="banner">
-      <div class="wsite-header"></div>
+    ?>
+
+    <div class="container">
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
+        <?= Alert::widget() ?>
+        <?= $content ?>
     </div>
-    <div id="content"><div id='wsite-content' class='wsite-not-footer'>
-      <?php echo $content; ?>
-</div>
-</div>
-    <div id="footer"><?php echo Html::encode(\Yii::$app->name); ?>
-</div>
-  </div>
 </div>
 
-<?php $this->endBody(); ?>
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left"><a href="http://itvillahermosa.edu.mx/">&copy; Instituo Tecnológico de Villahermosa <?= date('Y') ?></a></p>
+
+        <p class="pull-right"><a href="http://www.tecnm.mx/">Tecnoloógico Nacional de México</a></p>
+    </div>
+</footer>
+
+<?php $this->endBody() ?>
 </body>
 </html>
-<?php $this->endPage(); ?>
+<?php $this->endPage() ?>

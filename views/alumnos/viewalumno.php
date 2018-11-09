@@ -14,16 +14,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Actualizar', ['update', 'matricula' => $model->matricula, 'carreras_idcarreras' => $model->carreras_idcarreras], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Borrar', ['delete', 'matricula' => $model->matricula, 'carreras_idcarreras' => $model->carreras_idcarreras], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Esta seguro de eliminar al Alumno: '.$model->nombre.' '.$model->apellidopat.'?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
 
     <?= DetailView::widget([
         'model' => $model,
@@ -70,9 +60,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ],
     ]) ?>
-
-     <?= Html::a('Agregar Dirección', ['domicilios/create'], ['class' => 'btn btn-success']) ?>
-     <?= Html::a('Versión PDF', ['reportealumno','matricula'=>$model->matricula,'carreras_idcarreras' =>$model->carreras_idcarreras], ['class' => 'btn btn-warning']) ?>
 
 
 </div>

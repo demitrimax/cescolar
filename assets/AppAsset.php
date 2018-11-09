@@ -22,6 +22,7 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
         'css/menu.css',
+        'sunflower-butterfly/files/main_style.css',
     ];
     public $js = [
         'js/funciones.js'

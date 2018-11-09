@@ -26,6 +26,9 @@ class CarrerasController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
+            'ghost-access'=> [
+            'class' => 'webvimark\modules\UserManagement\components\GhostAccessControl',
+            ]
         ];
     }
 
