@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+//use app\models\Calificaciones;
 
 /**
  * This is the model class for table "alumnos".
@@ -80,6 +81,8 @@ class Alumnos extends \yii\db\ActiveRecord
             'status_idstatus'           => 'Estatus',
             'carreras_idcarreras'       => 'Carrera',
             'nombrecompleto'            => 'Nombre Completo',
+            'calificaciones2'            => 'Calificaciones',
+            'promedio'                  => 'Promedio',
         ];
     }
    
@@ -130,6 +133,30 @@ class Alumnos extends \yii\db\ActiveRecord
     public function getCalificaciones()
     {
         return $this->hasOne(Calificaciones::className(), ['alumnos_matricula' => 'matricula']);
+    }
+
+    public function getCalificaciones2()
+    {
+        $calificaciones = \app\models\Calificaciones::find()->where(['alumnos_matricula'=>$this->matricula])->all();
+        $texto = "";
+        foreach ($calificaciones as $key => $calificacion) {
+             $texto .= $calificacion->parcial.":".$calificacion->promedio.",";
+         } 
+
+            return $texto;
+    }
+
+    public function getPromedio()
+    {
+        $calificaciones = \app\models\Calificaciones::find()->where(['alumnos_matricula'=>$this->matricula])->all();
+        if (count($calificaciones)>0) {
+            $suma = 0;
+            foreach ($calificaciones as $key => $calificacion) {
+                $suma += $calificacion->promedio;
+            } 
+            return $suma/count($calificaciones);
+        }
+        return 0;
     }
 
 

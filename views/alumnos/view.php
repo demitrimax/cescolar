@@ -72,7 +72,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
      <?= Html::a('Agregar Dirección', ['domicilios/create'], ['class' => 'btn btn-success']) ?>
-     <?= Html::a('Versión PDF', ['reportealumno','matricula'=>$model->matricula,'carreras_idcarreras' =>$model->carreras_idcarreras], ['class' => 'btn btn-warning']) ?>
+     <?= Html::a('Versión PDF', ['reportealumno','matricula'=>$model->matricula,'carreras_idcarreras' =>$model->carreras_idcarreras], ['class' => 'btn btn-warning','target' =>'_blank']) ?>
 
 
 </div>

@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Alta de Alumnos', ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Reporte de Alumnos', ['reporte'], ['class' => 'btn btn-warning']) ?>
     </p>
-
+    
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -43,8 +43,27 @@ $this->params['breadcrumbs'][] = $this->title;
             //'contacto',
             //'status_idstatus',
             //'carreras_idcarreras',
+            'calificaciones2',
+            'promedio',
+            ['class' => 'yii\grid\ActionColumn',
 
+                'template'=>'{view}{delete}{reportealumno}',
+
+                'buttons'=>[
+                    'reportealumno' => function ($url, $model) { 
+                        return Html::a('<i class="glyphicon glyphicon-print"></span>', $url, ['title' => Yii::t('yii', 'Reporte'), ]);
+                    }
+                ]                 
+            ],         
+            
             ['class' => 'yii\grid\ActionColumn'],
+           /*[
+                'label'=>'Reporte',
+                'format' => 'raw', 
+                'value' => function ($model) {
+                    return Html::a('<i class="glyphicon glyphicon-print"></i>',['reportealumno','matricula'=>$model->matricula,'carreras_idcarreras'=>$model->carreras_idcarreras],['class'=>'btn btn-primary', 'target'=>'_blank']);
+                }
+            ]*/
         ],
     ]); ?>
 </div>
