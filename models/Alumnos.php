@@ -137,7 +137,9 @@ class Alumnos extends \yii\db\ActiveRecord
 
     public function getCalificaciones2()
     {
-        $calificaciones = \app\models\Calificaciones::find()->where(['alumnos_matricula'=>$this->matricula])->all();
+        $calificaciones = \app\models\Calificaciones::find()
+                    ->where(['alumnos_matricula'=>$this->matricula])
+                    ->all();
         $texto = "";
         foreach ($calificaciones as $key => $calificacion) {
              $texto .= $calificacion->parcial.":".$calificacion->promedio.",";
@@ -148,7 +150,9 @@ class Alumnos extends \yii\db\ActiveRecord
 
     public function getPromedio()
     {
-        $calificaciones = \app\models\Calificaciones::find()->where(['alumnos_matricula'=>$this->matricula])->all();
+        $calificaciones = \app\models\Calificaciones::find()
+                    ->where(['alumnos_matricula'=>$this->matricula])
+                    ->all();
         if (count($calificaciones)>0) {
             $suma = 0;
             foreach ($calificaciones as $key => $calificacion) {

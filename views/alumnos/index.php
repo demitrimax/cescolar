@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Alta de Alumnos', ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Reporte de Alumnos', ['reporte'], ['class' => 'btn btn-warning']) ?>
     </p>
-    
+
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -47,16 +47,22 @@ $this->params['breadcrumbs'][] = $this->title;
             'promedio',
             ['class' => 'yii\grid\ActionColumn',
 
-                'template'=>'{view}{delete}{reportealumno}',
+                'template'=>'{view}{delete}{update}{reportealumno}',
 
                 'buttons'=>[
                     'reportealumno' => function ($url, $model) { 
-                        return Html::a('<i class="glyphicon glyphicon-print"></span>', $url, ['title' => Yii::t('yii', 'Reporte'), ]);
-                    }
+                        return Html::a('<span><i class="glyphicon glyphicon-print"></span>', $url, ['title' => Yii::t('yii', 'Reporte'), 'target' => '_blank', 'class' => 'btn btn-primary' ]);
+                    },
+                    'view' => function ($url, $model) { 
+                        return Html::a('<span><i class="glyphicon glyphicon-eye-open"></span>', $url, ['title' => Yii::t('yii', 'Ver detalles'), 'target' => '_blank', 'class' => 'btn btn-warning' ]);
+                    },
+                    'delete' => function ($url, $model) { 
+                        return Html::a('<span><i class="glyphicon glyphicon-trash"></span>', $url, ['title' => Yii::t('yii', 'Ver detalles'), 'target' => '_blank', 'class' => 'btn btn-danger' ]);
+                    },
                 ]                 
             ],         
             
-            ['class' => 'yii\grid\ActionColumn'],
+            //['class' => 'yii\grid\ActionColumn'],
            /*[
                 'label'=>'Reporte',
                 'format' => 'raw', 
